@@ -90,8 +90,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   TextField(
                     controller: _textController,
-                    keyboardType: const TextInputType.numberWithOptions(
-                        signed: false, decimal: false),
+                    keyboardType: const TextInputType.numberWithOptions(signed: false, decimal: false),
                     decoration: InputDecoration(
                       errorText: error,
                     ),
@@ -99,9 +98,7 @@ class _HomePageState extends State<HomePage> {
                     enabled: isTextFieldEnabled,
                   ),
                   ElevatedButton(
-                    onPressed: isGuessButtonEnabled
-                        ? _onGuessPressed
-                        : _onResetPressed,
+                    onPressed: isGuessButtonEnabled ? _onGuessPressed : _onResetPressed,
                     child: Text(isGuessButtonEnabled ? 'GUESS' : 'RESET'),
                   ),
                 ],

@@ -34,8 +34,7 @@ class _MyAppState extends State<MyApp> {
               fit: BoxFit.cover,
             ),
             TextField(
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
                 hintText: 'Enter the amount in EUR',
                 errorText: error,
