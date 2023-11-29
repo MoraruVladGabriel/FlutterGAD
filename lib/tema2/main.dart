@@ -46,18 +46,17 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: <Widget>[
                 Text(
                   "I'm thinking of a number",
                   style: TextStyle(fontSize: 28),
                 ),
                 Text(
-                  "between 1 and 100.",
+                  'between 1 and 100.',
                   style: TextStyle(fontSize: 28),
                 ),
               ],
