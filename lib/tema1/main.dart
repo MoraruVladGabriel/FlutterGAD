@@ -26,8 +26,6 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.blue,
         ),
         body: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image.network(
               'https://cdn-icons-png.flaticon.com/512/6607/6607631.png',
@@ -42,7 +40,7 @@ class _MyAppState extends State<MyApp> {
               onChanged: (String value) {
                 setState(() {
                   text = value;
-                  number = double.tryParse(value)!;
+                  number = double.tryParse(value);
                   if (number == null) {
                     error = 'Value must be a number!';
                   } else {

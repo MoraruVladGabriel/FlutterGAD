@@ -70,11 +70,11 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: <Widget>[
                   Text(
-                    "You tried $number",
+                    'You tried $number',
                     style: const TextStyle(fontSize: 50),
                   ),
                   Text(
-                    "Try $message",
+                    'Try $message',
                     style: const TextStyle(fontSize: 50),
                   ),
                 ],
@@ -84,12 +84,13 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: <Widget>[
                   const Text(
-                    "Try a number!",
+                    'Try a number!',
                     style: TextStyle(fontSize: 32),
                   ),
                   TextField(
                     controller: _textController,
-                    keyboardType: const TextInputType.numberWithOptions(signed: false, decimal: false),
+                    // ignore: use_named_constants
+                    keyboardType: const TextInputType.numberWithOptions(),
                     decoration: InputDecoration(
                       errorText: error,
                     ),
@@ -114,11 +115,11 @@ class _HomePageState extends State<HomePage> {
     print(random);
     setState(() {
       if (value.isNotEmpty) {
-        int? nr = int.tryParse(value);
+        final int? nr = int.tryParse(value);
         if (nr == null) {
-          error = "Value must be a number!";
+          error = 'Value must be a number!';
         } else if (nr < 1 || nr > 100) {
-          error = "Value must be a number between 1 and 100";
+          error = 'Value must be a number between 1 and 100';
         } else {
           error = null;
           number = nr;
@@ -131,10 +132,10 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       if (number! < random) {
         status = true;
-        message = "higher";
+        message = 'higher';
       } else if (number! > random) {
         status = true;
-        message = "lower";
+        message = 'lower';
       } else {
         _showAlertDialog();
         isTextFieldEnabled = true;
@@ -158,13 +159,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _showAlertDialog() {
-    showDialog(
+    showDialog<void>(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('You guessed right'),
           content: Text('It was $random.'),
-          actions: [
+          actions: <Widget>[
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
